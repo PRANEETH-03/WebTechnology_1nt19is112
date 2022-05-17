@@ -8,18 +8,40 @@
 </head>
 <body>
     <script>
-        const a=[];
-        var size=prompt("Enter the size:");
-        for(var i=0;i<size;i++)
+         function covid()
         {
-            a[i]=prompt("Enter the element:"+(i+1));
+            var a = prompt("Enter string");
+            var covid = "coronavirus"
+            var res = "POSITIVE"
+            var j=0;
+            console.log(a.length);
+            for(i = 0;i<a.length;i++){
+                flag = 0;
+                while(j<covid.length){
+                    if(a[i] == covid[j]){
+                        flag=1;
+                        break;
+                    }
+                    j++;
+                    
+                }
+                if(flag==0){
+                        res = "NEGATIVE";
+                        break;
+                    }
+                    else{
+                        flag =1;
+                    }
+            }
+            // document.write(res);
+            // document.write("<br>");
+            return res;
         }
-        for(var i=0;i<size;i++)
-        {
-            if(a[i]=='v' ||a[i]=='V')
-            document.write("Positive ");
-            else
-            document.write("Negitive" );
+        var num = prompt("Total cantidates")
+        var num = parseInt(num);
+        for(var i = 0 ;i<num;i++){
+            document.write(covid());
+            document.write("<br>");
         }
     </script>
 </body>
