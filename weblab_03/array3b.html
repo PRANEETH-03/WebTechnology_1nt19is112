@@ -8,17 +8,18 @@
 </head>
 <body>
     <script>
-        var size=prompt("Enter the size:");
-        var a=[];
-        var b=[];
-        for(var i=0;i<size;i++)
-        {
-            a[i]=prompt("Enter the element:"+(i+1));
-        }
-        
-        const myArray = a.split(0,sp);
-        document.getElementById("demo").innerHTML = myArray;
-        
+        function sliceIntoChunks(arr, chunkSize) {
+                 const res = [];
+                 for (let i = 0; i < arr.length; i += chunkSize) {
+                 const chunk = arr.slice(i, i + chunkSize);
+                 res.push(chunk);
+                }
+            
+        return res;
+       }
+
+         const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+         document.write(sliceIntoChunks(arr,3));
     </script>
 </body>
 </html>
